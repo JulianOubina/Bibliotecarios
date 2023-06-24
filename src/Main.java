@@ -352,6 +352,7 @@ public class Main {
                 case 6:
                     //Opcion 1: generar notificaciones
                     //Opciones 2: enviarlas
+                    //TODO : Agregar el menu aca
                     notificador.generarNotificacion(crudPrestamo.getPrestamos());
                     notificador.enviarNotificacion();
                     break;
