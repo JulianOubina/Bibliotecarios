@@ -6,10 +6,11 @@ import model.estado.prestamo.Atrasado;
 import model.estado.prestamo.PorVencerse;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Notificador {
-    private List<Notificacion> notificaciones;
+    private List<Notificacion> notificaciones = new ArrayList<>();
 
     public void generarNotificacion(List<Prestamo> prestamos){
         for (Prestamo prestamo : prestamos){
@@ -29,6 +30,10 @@ public class Notificador {
     }
 
     public void enviarNotificacion(){
+        if(notificaciones.isEmpty()){
+            System.out.println("No existen notificaciones para mandar");
+            return;
+        }
         for (Notificacion notificacion : notificaciones){
             if (!notificacion.isEnviado()){
                 System.out.println("----------------------------------");

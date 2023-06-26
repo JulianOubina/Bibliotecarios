@@ -105,7 +105,7 @@ public class Bibliotecario {
             diasParaDevolver = 5;
         }
 
-        System.out.println("Ubicacion : ");
+        System.out.println("Ubicacion : "); //aca iria un adapter con el sistema externo
         String ubicacion = scanner.nextLine();
 
 
@@ -253,7 +253,8 @@ public class Bibliotecario {
             return;
         }
 
-        int diasRestantesPrestamo = crudLibro.calcularDiasRestantes(isbnPrestamo);
+        int diasRestantesPrestamo = crudLibro.calcularDiasRestantes(isbnPrestamo); //observer
+
         System.out.println("Id socio: ");
         int idSocioPrestamo = scanner.nextInt();
         scanner.nextLine();
@@ -274,7 +275,7 @@ public class Bibliotecario {
 
         Prestamo prestamo = new Prestamo(new AlDia(), LocalDate.now(), diasRestantesPrestamo, isbnPrestamo, idSocioPrestamo);
         crudPrestamo.generarPrestamo(prestamo);
-        crudLibro.prestarLibro(isbnPrestamo);
+        crudLibro.prestarLibro(isbnPrestamo); //cambia el state a En uso
     }
     public void cancelarPrestamo(LibroCRUD crudLibro, SocioCRUD crudSocio, PrestamoCRUD crudPrestamo){
         Scanner scanner = new Scanner(System.in);
@@ -289,7 +290,7 @@ public class Bibliotecario {
         Prestamo prestamoBuscar = crudPrestamo.buscarPrestamo(isbnPrestamoDevuelto);
         Socio socio = crudSocio.buscarSocio(prestamoBuscar.getIdSocio());
         crudPrestamo.cancelarPrestamo(isbnPrestamoDevuelto, socio);
-        crudLibro.devolverLibro(isbnPrestamoDevuelto);
+        crudLibro.devolverLibro(isbnPrestamoDevuelto); //cambia state a Disponible
     }
     public void actualizarPrestamo(LibroCRUD crudLibro, SocioCRUD crudSocio, PrestamoCRUD crudPrestamo){
         Scanner scanner = new Scanner(System.in);

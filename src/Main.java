@@ -2,18 +2,16 @@ import Controller.LibroCRUD;
 import Controller.Notificador;
 import Controller.PrestamoCRUD;
 import Controller.SocioCRUD;
+import Controller.Bibliotecario;
+
 import model.Prestamo;
 import model.Socio;
 import model.Libro;
-import model.estado.StateLibro;
-import model.estado.StatePrestamo;
+
 import model.estado.libro.Disponible;
-import model.estado.libro.*;
 import model.estado.prestamo.AlDia;
-import Controller.Bibliotecario;
 
 import java.util.*;
-import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
 
 
@@ -46,11 +44,9 @@ public class Main {
                         case 1:
                             controller.generarSocio(crudSocio);
                             break;
-
                         case 2:
                             controller.eliminarSocio(crudSocio);
                             break;
-
                         case 3:
                             controller.actualizarSocio(crudSocio);
                             break;
@@ -109,6 +105,7 @@ public class Main {
                             break;
                         case 2:
                             controller.cancelarPrestamo(crudLibro, crudSocio, crudPrestamo);
+                            break;
                         case 3:
                             controller.actualizarPrestamo(crudLibro, crudSocio, crudPrestamo);
                             break;
@@ -133,6 +130,8 @@ public class Main {
                             controller.enviarNotificaciones(notificador);
                             break;
                     }
+                    break;
+
                 default:
                     System.out.println("Opción inválida. Por favor, ingrese un número del 1 al 6.");
                     break;
@@ -151,7 +150,6 @@ public class Main {
         crudSocio.agregarSocio(socio3);
         Socio socio4 = new Socio(4, "Otro", "Prueba", 44451623, "prueba@prueba.com", 12345673, "wpp", 0);
         crudSocio.agregarSocio(socio4);
-
     }
 
     private static void generarLibros(LibroCRUD crudLibro){

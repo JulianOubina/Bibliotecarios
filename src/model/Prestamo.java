@@ -41,11 +41,5 @@ public class Prestamo {
     public void setDiasRestantes(int diasRestantes) {
         this.diasRestantes = diasRestantes;
     }
-    public void setIdSocio(int idSocio) {
-        this.idSocio = idSocio;
-    }
-    public void setIsbn(int isbn) {
-        this.isbn = isbn;
-    }
 
 }

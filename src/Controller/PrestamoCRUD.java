@@ -36,7 +36,6 @@ public class PrestamoCRUD {
     }
 
     private void calcularPremioPrestamo(Prestamo prestamo, Socio socio) {
-        //Si prestamo no es ATRASADO
         if (!prestamo.getEstadoPrestamo().getDescripcion().equals("Atrasado")){
             socio.setPrestamoExitoso(socio.getPrestamoExitoso() +1);
             if (socio.getPrestamoExitoso() == 5){

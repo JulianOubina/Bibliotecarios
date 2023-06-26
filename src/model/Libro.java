@@ -27,31 +27,8 @@ public class Libro {
     }
 
 
-
-    public void setIsbn(int isbn) {
-        this.isbn = isbn;
-    }
-    public void setDiasParaDevolver(int diasParaDevolver) {
-        this.diasParaDevolver = diasParaDevolver;
-    }
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
-    public void setFechaPublicacion(String fechaPublicacionString) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        this.fechaPublicacion = LocalDate.parse(fechaPublicacionString, formatter);
-    }
-    public void setAutor(String autor) {
-        this.autor = autor;
-    }
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
     public void setEstadoLibro(StateLibro estadoLibro) {
         this.estadoLibro = estadoLibro;
-    }
-    public void setUbicacion(String ubicacion){
-        this.ubicacion = ubicacion;
     }
 
     public int getIsbn() {
@@ -71,9 +48,6 @@ public class Libro {
     }
     public String getCategoria() {
         return categoria;
-    }
-    public int getDiasParaDevolver() {
-        return diasParaDevolver;
     }
     public String getUbicacion(){
         return ubicacion;

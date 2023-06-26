@@ -7,6 +7,7 @@ public class Atrasado implements StatePrestamo {
 
     @Override
     public void descontarDia(Prestamo prestamo) {
+
     }
 
     @Override
